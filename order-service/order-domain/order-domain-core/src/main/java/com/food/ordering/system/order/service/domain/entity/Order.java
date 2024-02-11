@@ -68,7 +68,7 @@ public class Order extends AggregateRoot<OrderId> {
             throw new OrderDomainException("Order is not in correct state for cancel operation!");
         }
         orderStatus = OrderStatus.CANCELLED;
-        updateFailureMessage(this.failureMessages);
+        updateFailureMessage(failureMessages);
     }
 
     private void updateFailureMessage(List<String> failureMessages) {
@@ -187,6 +187,31 @@ public class Order extends AggregateRoot<OrderId> {
 
         public Builder orderId(OrderId val) {
             orderId = val;
+            return this;
+        }
+
+        public Builder customerId(CustomerId customerId) {
+            customerId = customerId;
+            return this;
+        }
+
+        public Builder price(Money price) {
+            price = price;
+            return this;
+        }
+
+        public Builder orderItemsList(List<OrderItem> orderItemList) {
+            orderItemList = orderItemList;
+            return this;
+        }
+
+        public Builder restaurantId(RestaurantId restaurantId) {
+            restaurantId = restaurantId;
+            return this;
+        }
+
+        public Builder deliveryAddress(StreetAddress deliveryAddress) {
+            streetAddress = deliveryAddress;
             return this;
         }
 

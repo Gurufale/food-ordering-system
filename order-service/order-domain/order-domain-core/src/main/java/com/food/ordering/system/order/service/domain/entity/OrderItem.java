@@ -83,6 +83,21 @@ public class OrderItem extends BaseEntity<OrderItemId> {
             return this;
         }
 
+        public Builder product(Product product) {
+            product = product;
+            return this;
+        }
+
+        public Builder quantity(int quantity) {
+            quantity = quantity;
+            return this;
+        }
+
+        public Builder subTotal(Money subtotal) {
+            subtotal = subtotal;
+            return this;
+        }
+
         public Builder orderId(OrderId val) {
             orderId = val;
             return this;
@@ -90,6 +105,11 @@ public class OrderItem extends BaseEntity<OrderItemId> {
 
         public OrderItem build() {
             return new OrderItem(this);
+        }
+
+        public Builder price(Money money) {
+            price = money;
+            return null;
         }
     }
 }

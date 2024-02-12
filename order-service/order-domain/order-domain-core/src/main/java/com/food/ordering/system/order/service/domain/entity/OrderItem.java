@@ -109,7 +109,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
 
         public Builder price(Money money) {
             price = money;
-            return null;
+            return this;
         }
     }
 }
